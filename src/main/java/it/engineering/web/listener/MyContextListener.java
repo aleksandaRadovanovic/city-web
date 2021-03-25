@@ -8,6 +8,8 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 import it.engineering.web.model.City;
+import it.engineering.web.model.Manufacturer;
+import it.engineering.web.model.Product;
 import it.engineering.web.model.User;
 
 @WebListener("Configuration")
@@ -27,7 +29,15 @@ public class MyContextListener implements ServletContextListener {
     	
     	
     	List<City> operations = new ArrayList<City>();
+    	operations.add(new City("Valjevo", "14000"));
     	sce.getServletContext().setAttribute("cities", operations);
+    	
+    	List<Manufacturer> operManufacturers = new ArrayList<Manufacturer>();
+    	sce.getServletContext().setAttribute("manufacturerList", operManufacturers);
+    	
+    	List<Product> operProducts = new ArrayList<Product>();
+    	operProducts.add(new Product(1, "aaa", 1, "aaa", "aaa", 2, "aaa"));
+    	sce.getServletContext().setAttribute("productList", operProducts);
     }
 	
 }

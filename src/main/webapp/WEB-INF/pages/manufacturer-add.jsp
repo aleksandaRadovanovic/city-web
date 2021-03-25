@@ -27,11 +27,11 @@
 				<td><input type="text" id="pib"name="pib" value=""></td>
 			</tr>
 			<tr>
-				<td>Maticni broj:</td>
-				<td><input type="text" id="maticniBroj"name="maticniBroj" value=""></td>
+				<td colspan="2">${error}</td>
 			</tr>
 			<tr>
-				<td colspan="2">${error}</td>
+				<td>Maticni broj:</td>
+				<td><input type="text" id="maticniBroj"name="maticniBroj" value=""></td>
 			</tr>
 			<tr>
 				<td>Adresa:</td>

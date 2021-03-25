@@ -31,5 +31,9 @@
 		<a href="/servlet-introduction/navigation?link=add&entity=product">Unesi proizvod</a>
 		<a href="/servlet-introduction/navigation?link=list&entity=product">Prikazi proizvod</a>
 	</div>
+	<div id="logout">
+		<p></p>
+		<a href="logout">[Logout]</a>
+	</div>
 </body>
 </html>

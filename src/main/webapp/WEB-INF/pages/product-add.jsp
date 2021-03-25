@@ -10,10 +10,10 @@
 <title>Product-add</title>
 </head>
 <body>
-	<p>Unseite podatke za novi grad...</p>
+	<p>Unseite podatke za novi proizvod...</p>
 	<p>${message}</p>
 
-	<form action="/servlet-introduction/city" method="post">
+	<form action="/servlet-introduction/product" method="post">
 		<table>
 			<tr>
 				<td>Naziv proizvoda:</td>
@@ -28,10 +28,6 @@
 			</tr>
 			<tr>
 				<td colspan="2">${error}</td>
-			</tr>
-			<tr>
-				<td>Sifra proizvoda:</td>
-				<td><input type="text" id="sifraProizvoda"name="sifraProizvoda" value=""></td>
 			</tr>
 			<tr>
 				<td>Jedinicna cena:</td>
@@ -54,7 +50,7 @@
 				<td><input type="text" id="proizvodjac"name="proizvodjac" value=""></td>
 			</tr>
 			<tr>
-				<td><input type="submit" name="operation" value="dodaj"></td>
+				<td><input type="submit" name="operation" value="dodajProizvod"></td>
 			</tr>
 		</table>
 	</form>

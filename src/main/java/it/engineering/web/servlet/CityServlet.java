@@ -37,7 +37,8 @@ public class CityServlet extends HttpServlet {
 		@SuppressWarnings("unchecked")
 		List<City> list = (List<City>) request.getServletContext().getAttribute("cities");
 		list.remove(index);
-		request.getRequestDispatcher("/navigation?link=list").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/pages/city-list.jsp").forward(request, response);
+//		request.getRequestDispatcher("/navigation?link=list").forward(request, response);
 	}
 
 	/**
@@ -70,7 +71,7 @@ public class CityServlet extends HttpServlet {
 			request.setAttribute("message", "Grska pri dodavanju grada");
 		}
 		request.setAttribute("cityDto", cityDto);
-		request.getRequestDispatcher("/WEB-INF/pagescity-add.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/pages/city-add.jsp").forward(request, response);
 	}
 	
 	@SuppressWarnings("unchecked")

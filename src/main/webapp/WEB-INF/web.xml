@@ -37,6 +37,24 @@
   	<description></description>
   	<servlet-class>it.engineering.web.servlet.CityServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ManufacturerServlet</servlet-name>
+  	<display-name>ManufacturerServlet</display-name>
+  	<description></description>
+  	<servlet-class>it.engineering.web.servlet.ManufacturerServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ProductServlet</servlet-name>
+  	<display-name>ProductServlet</display-name>
+  	<description></description>
+  	<servlet-class>it.engineering.web.servlet.ProductServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<display-name>LogoutServlet</display-name>
+  	<description></description>
+  	<servlet-class>it.engineering.web.servlet.LogoutServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>NavigationServlet2</servlet-name>
   	<url-pattern>/NavigationServlet2</url-pattern>
@@ -52,5 +70,17 @@
   <servlet-mapping>
   	<servlet-name>CityServlet</servlet-name>
   	<url-pattern>/CityServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManufacturerServlet</servlet-name>
+  	<url-pattern>/ManufacturerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ProductServlet</servlet-name>
+  	<url-pattern>/ProductServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<url-pattern>/LogoutServlet</url-pattern>
   </servlet-mapping>
 </web-app>

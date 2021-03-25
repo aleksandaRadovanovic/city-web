@@ -8,14 +8,14 @@ public class Product {
 	private String mernaJedinica;
 	private String valuta;
 	private double poreskaStopa;
-	private Manufacturer manufacturer;
+	private String proizvodjacNaziv;
 	
 	public Product() {
 		super();
 	}
 
 	public Product(int sifraProizvoda, String nazivProizvoda, double jedinicnaCena, String mernaJedinica, String valuta,
-			double poreskaStopa, Manufacturer manufacturer) {
+			double poreskaStopa, String proizvodjacNaziv) {
 		super();
 		this.sifraProizvoda = sifraProizvoda;
 		this.nazivProizvoda = nazivProizvoda;
@@ -23,7 +23,7 @@ public class Product {
 		this.mernaJedinica = mernaJedinica;
 		this.valuta = valuta;
 		this.poreskaStopa = poreskaStopa;
-		this.manufacturer = manufacturer;
+		this.proizvodjacNaziv = proizvodjacNaziv;
 	}
 
 	public int getSifraProizvoda() {
@@ -74,12 +74,12 @@ public class Product {
 		this.poreskaStopa = poreskaStopa;
 	}
 
-	public Manufacturer getManufacturer() {
-		return manufacturer;
+	public String getProizvodjacNaziv() {
+		return proizvodjacNaziv;
 	}
 
-	public void setManufacturer(Manufacturer manufacturer) {
-		this.manufacturer = manufacturer;
+	public void setProizvodjacNaziv(String proizvodjacNaziv) {
+		this.proizvodjacNaziv = proizvodjacNaziv;
 	}
 	
 }

@@ -16,8 +16,8 @@
 				<td>id</td>
 				<td>Naziv</td>
 				<td>Postanski broj</td>
-				<td>operation</td>
-				<td>action</td>
+<!-- 				<td>operation</td> -->
+<!-- 				<td>action</td> -->
 			</tr>
 		</thead>
 		<tbody>
@@ -27,7 +27,7 @@
 				<td>${element.naziv}</td>
 				<td>${element.postBroj}</td>
 				<td>${element.operation}</td>
-				<c:url value="/math" var="urlDelete">
+				<c:url value="/city" var="urlDelete">
 					<c:param name="index" value="${loop.index}"></c:param>
 				</c:url>
 				<td>

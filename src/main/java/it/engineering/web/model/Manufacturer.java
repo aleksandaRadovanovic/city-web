@@ -6,19 +6,19 @@ public class Manufacturer {
 	private String maticniBroj;
 	private String nazivProizvodjaca;
 	private String adresa;
-	private City city;
+	private String gradNaziv;
 	
 	public Manufacturer() {
 		super();
 	}
 	
-	public Manufacturer(int pib, String maticniBroj, String nazivProizvodjaca, String adresa, City city) {
+	public Manufacturer(int pib, String maticniBroj, String nazivProizvodjaca, String adresa, String gradNaziv) {
 		super();
 		this.pib = pib;
 		this.maticniBroj = maticniBroj;
 		this.nazivProizvodjaca = nazivProizvodjaca;
 		this.adresa = adresa;
-		this.city = city;
+		this.gradNaziv = gradNaziv;
 	}
 
 	public int getPib() {
@@ -53,12 +53,12 @@ public class Manufacturer {
 		this.adresa = adresa;
 	}
 
-	public City getCity() {
-		return city;
+	public String getGradNaziv() {
+		return gradNaziv;
 	}
 
-	public void setCity(City city) {
-		this.city = city;
+	public void setGradNaziv(String gradNaziv) {
+		this.gradNaziv = gradNaziv;
 	}
 
 }
