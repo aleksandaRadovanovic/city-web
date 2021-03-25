@@ -41,6 +41,7 @@ public class LoginServlet extends HttpServlet {
 		
 		boolean found = false;
 		
+		@SuppressWarnings("unchecked")
 		List<User> users = (List<User>) getServletContext().getAttribute("users");
 		for(User u : users) {
 			if(u.getEmail().equals(email) && u.getPassword().equals(password)) {
@@ -48,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 			}
 		}
 		if(found) {
-			request.getRequestDispatcher("/home.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/pages/home.jsp").forward(request, response);
 		}else {
 			request.setAttribute("message", "Email or password are not correct");
 		}

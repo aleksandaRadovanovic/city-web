@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+
+<%@page isELIgnored="false"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +13,7 @@
 	<p>Unseite podatke za novi grad...</p>
 	<p>${message}</p>
 
-	<form action="${pageContext.request.contextPath}/city" method="post">
+	<form action="/servlet-introduction/city" method="post">
 		<table>
 			<tr>
 				<td>Naziv grada:</td>

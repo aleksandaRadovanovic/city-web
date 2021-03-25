@@ -34,11 +34,11 @@ public class NavigationServlet extends HttpServlet {
 			switch (link) {
 			case "add":
 				request.setAttribute("message", "Dodaj novi grad");
-				page = "/city-add.jsp";
+				page = "/WEB-INF/pages/city-add.jsp";
 				break;
 			case "list":
 				request.setAttribute("message", "Svi gradovi");
-				page = "/city-list.jsp";
+				page = "/WEB-INF/pages/city-list.jsp";
 			default:
 				request.setAttribute("message", "Link nije definaisan");
 				break;

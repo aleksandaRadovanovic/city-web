@@ -2,15 +2,19 @@ package it.engineering.web.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import it.engineering.web.model.City;
 
+import java.util.List;
+
 /**
  * Servlet implementation class CityServlet
  */
+@WebServlet(urlPatterns = {"/city"})
 public class CityServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -26,8 +30,14 @@ public class CityServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		String indexParam = request.getParameter("index");
+		int index = Integer.parseInt(indexParam);
+		
+		@SuppressWarnings("unchecked")
+		List<City> list = (List<City>) request.getServletContext().getAttribute("cities");
+		list.remove(index);
+		request.getRequestDispatcher("/navigation?link=list").forward(request, response);
 	}
 
 	/**
@@ -60,7 +70,7 @@ public class CityServlet extends HttpServlet {
 			request.setAttribute("message", "Grska pri dodavanju grada");
 		}
 		request.setAttribute("cityDto", cityDto);
-		request.getRequestDispatcher("/city-add.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/pagescity-add.jsp").forward(request, response);
 	}
 	
 	@SuppressWarnings("unchecked")
