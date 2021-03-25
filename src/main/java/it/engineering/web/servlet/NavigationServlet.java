@@ -29,24 +29,49 @@ public class NavigationServlet extends HttpServlet {
 		
 		String link = request.getParameter("link");
 		String page = "home.jsp";
+		String entity = request.getParameter("entity");
 		
 		if(link != null) {
-			switch (link) {
-			case "add":
+		switch (link) {
+		case "add":
+			switch(entity) {
+			case "city":
 				request.setAttribute("message", "Dodaj novi grad");
 				page = "/WEB-INF/pages/city-add.jsp";
 				break;
-			case "list":
-				request.setAttribute("message", "Svi gradovi");
-				page = "/WEB-INF/pages/city-list.jsp";
-			default:
-				request.setAttribute("message", "Link nije definaisan");
+			case "manufacturer":
+				request.setAttribute("message", "Dodaj novog proizvodjaca");
+				page = "/WEB-INF/pages/manufacturer-add.jsp";
+				break;
+			case "product":
+				request.setAttribute("message", "Dodaj novi proizvod");
+				page = "/WEB-INF/pages/product-add.jsp";
 				break;
 			}
-		}else {
-			request.setAttribute("message", "Nije prosledjen parametar link...");
+			break;
+		case "list":
+			switch(entity) {
+			case "city":
+				request.setAttribute("message", "Svi gradovi");
+				page = "/WEB-INF/pages/city-list.jsp";
+				break;
+			case "manufacturer":
+				request.setAttribute("message", "Svi proizvodjaci");
+				page = "/WEB-INF/pages/manufacturer-list.jsp";
+				break;
+			case "product":
+				request.setAttribute("message", "Svi proizvodi");
+				page = "/WEB-INF/pages/product-list.jsp";
+				break;
+			}
+		default:
+			request.setAttribute("message", "Link nije definaisan");
+			break;
 		}
-		request.getRequestDispatcher(page).forward(request, response);
+	}else {
+		request.setAttribute("message", "Nije prosledjen parametar link...");
+	}
+	request.getRequestDispatcher(page).forward(request, response);
 	}
 
 	/**
