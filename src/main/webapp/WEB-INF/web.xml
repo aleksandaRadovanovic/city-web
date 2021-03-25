@@ -31,6 +31,12 @@
   	<description></description>
   	<servlet-class>it.engineering.web.servlet.Login</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>CityServlet</servlet-name>
+  	<display-name>CityServlet</display-name>
+  	<description></description>
+  	<servlet-class>it.engineering.web.servlet.CityServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>NavigationServlet2</servlet-name>
   	<url-pattern>/NavigationServlet2</url-pattern>
@@ -42,5 +48,9 @@
   <servlet-mapping>
   	<servlet-name>Login</servlet-name>
   	<url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CityServlet</servlet-name>
+  	<url-pattern>/CityServlet</url-pattern>
   </servlet-mapping>
 </web-app>

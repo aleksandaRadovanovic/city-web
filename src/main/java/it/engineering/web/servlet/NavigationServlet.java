@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class NavigationServlet2
  */
-
+@WebServlet(urlPatterns = {"/navigation","/nav"})
 public class NavigationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -26,19 +26,33 @@ public class NavigationServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String link = request.getParameter("link");
+		String page = "home.jsp";
+		
+		if(link != null) {
+			switch (link) {
+			case "add":
+				request.setAttribute("message", "Dodaj novi grad");
+				page = "/city-add.jsp";
+				break;
+			case "list":
+				request.setAttribute("message", "Svi gradovi");
+				page = "/city-list.jsp";
+			default:
+				request.setAttribute("message", "Link nije definaisan");
+				break;
+			}
+		}else {
+			request.setAttribute("message", "Nije prosledjen parametar link...");
+		}
+		request.getRequestDispatcher(page).forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		
-		boolean found = false;
-		
-		
 	}
 
 }

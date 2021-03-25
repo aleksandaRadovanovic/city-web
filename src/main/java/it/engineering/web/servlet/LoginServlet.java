@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import it.engineering.web.model.User;
 
 @WebServlet(urlPatterns = {"/login"})
-public class Login extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Login() {
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,19 +36,21 @@ public class Login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String username = request.getParameter("username");
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
 		boolean found = false;
 		
 		List<User> users = (List<User>) getServletContext().getAttribute("users");
 		for(User u : users) {
-			if(u.getUsername().equals(username) && u.getPassword().equals(password)) {
+			if(u.getEmail().equals(email) && u.getPassword().equals(password)) {
 				found = true;
 			}
 		}
 		if(found) {
 			request.getRequestDispatcher("/home.jsp").forward(request, response);
+		}else {
+			request.setAttribute("message", "Email or password are not correct");
 		}
 	}
 

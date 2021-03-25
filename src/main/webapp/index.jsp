@@ -13,11 +13,11 @@
 <body>
 	<div>
 		<form name="form" method="post" action="login">
-			<label for="username">Username:</label>
-			<input type="text" id="username" name="username" placeholder="Enter Username"/>
+			<label for="email">Email:</label>
+			<input type="text" id="email" name="email" placeholder="Enter email"/>
 			
 			<label for="password">Password:</label>
-			<input type="password" id="password" name="password" placeholder="Enter Password"/>
+			<input type="password" id="password" name="password" placeholder="Enter password"/>
 			
 			<input type="submit" value="login" name="login"/>
 		</form>
