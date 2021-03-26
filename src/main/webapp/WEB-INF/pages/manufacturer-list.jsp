@@ -19,25 +19,31 @@
 				<td>Maticni broj</td>
 				<td>Adresa</td>
 				<td>Grad</td>
-				<td>operation</td>
-				<td>action</td>
+				<td>brisanje</td>
+				<td>prikaz</td>
 			</tr>
 		</thead>
 		<tbody>
-		<c:forEach items="${requestScope.cities}" var="element" varStatus="loop">
+		<c:forEach items="${requestScope.manufacturerList}" var="element" varStatus="loop">
 			<tr>
 				<td>${loop.index}</td>
-				<td>${element.naziv}</td>
+				<td>${element.nazivProizvodjaca}</td>
 				<td>${element.pib}</td>
 				<td>${element.maticniBroj}</td>
 				<td>${element.adresa}</td>
-				<td>${element.grad}</td>
-				<td>${element.operation}</td>
-				<c:url value="/math" var="urlDelete">
+				<td>${element.gradNaziv}</td>
+				<c:url value="/manufacturer" var="urlDelete">
 					<c:param name="index" value="${loop.index}"></c:param>
 				</c:url>
 				<td>
-					<a:href="${urlDelete}">delete</a:href>
+					<a href="${urlDelete}">delete</a>
+				</td>
+				<c:url value="/manufacturer" var="urlDetails">
+					<c:param name="index" value="${loop.index}"></c:param>
+					<c:param name="opr" value="details"></c:param>
+				</c:url>
+				<td>
+					<a href="${urlDetails}">details</a>
 				</td>
 			</tr>
 		</c:forEach>	

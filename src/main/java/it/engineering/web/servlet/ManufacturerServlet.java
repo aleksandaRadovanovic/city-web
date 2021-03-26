@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import it.engineering.web.model.City;
 import it.engineering.web.model.Manufacturer;
 
 /**
@@ -33,11 +34,18 @@ public class ManufacturerServlet extends HttpServlet {
 
 		String indexParam = request.getParameter("index");
 		int index = Integer.parseInt(indexParam);
+		String opr = request.getParameter("opr");
 		
-		@SuppressWarnings("unchecked")
-		List<Manufacturer> list = (List<Manufacturer>) request.getServletContext().getAttribute("manufacturerList");
-		list.remove(index);
-		request.getRequestDispatcher("/navigation?link=list").forward(request, response);
+		if(request.getParameter("opr").equals("delete")) {
+			@SuppressWarnings("unchecked")
+			List<Manufacturer> list = (List<Manufacturer>) request.getServletContext().getAttribute("manufacturerList");
+			list.remove(index);
+			request.getRequestDispatcher("/navigation?link=list&entity=manufacturer").forward(request, response);
+		}else if(request.getParameter("opr").equals("details")) {
+			@SuppressWarnings("unchecked")
+			List<Manufacturer> list = (List<Manufacturer>) request.getServletContext().getAttribute("manufacturerList");
+			request.getRequestDispatcher("/navigation?link=add&entity=manufacturer").forward(request, response);
+		}
 	}
 
 	/**

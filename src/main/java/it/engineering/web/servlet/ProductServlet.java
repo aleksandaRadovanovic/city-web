@@ -34,11 +34,18 @@ public class ProductServlet extends HttpServlet {
 
 		String indexParam = request.getParameter("index");
 		int index = Integer.parseInt(indexParam);
+		String opr = request.getParameter("opr");
 		
-		@SuppressWarnings("unchecked")
-		List<Product> list = (List<Product>) request.getServletContext().getAttribute("productList");
-		list.remove(index);
-		request.getRequestDispatcher("/navigation?link=list").forward(request, response);
+		if(request.getParameter("opr").equals("delete")) {
+			@SuppressWarnings("unchecked")
+			List<Product> list = (List<Product>) request.getServletContext().getAttribute("productList");
+			list.remove(index);
+			request.getRequestDispatcher("/navigation?link=list&entity=product").forward(request, response);
+		}else if(request.getParameter("opr").equals("details")) {
+			@SuppressWarnings("unchecked")
+			List<Product> list = (List<Product>) request.getServletContext().getAttribute("productList");
+			request.getRequestDispatcher("/navigation?link=add&entity=product").forward(request, response);
+		}
 	}
 
 	/**

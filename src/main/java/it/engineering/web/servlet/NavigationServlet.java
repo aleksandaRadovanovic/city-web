@@ -1,11 +1,17 @@
 package it.engineering.web.servlet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import it.engineering.web.model.City;
+import it.engineering.web.model.Manufacturer;
+import it.engineering.web.model.Product;
 
 /**
  * Servlet implementation class NavigationServlet2
@@ -53,14 +59,20 @@ public class NavigationServlet extends HttpServlet {
 			switch(entity) {
 			case "city":
 				request.setAttribute("message", "Svi gradovi");
+				@SuppressWarnings("unchecked") List<City> cities = (List<City>) request.getServletContext().getAttribute("cities");
+				request.setAttribute("cities",cities);
 				page = "/WEB-INF/pages/city-list.jsp";
 				break;
 			case "manufacturer":
 				request.setAttribute("message", "Svi proizvodjaci");
+				@SuppressWarnings("unchecked") List<Manufacturer> manufacturerList = (List<Manufacturer>) request.getServletContext().getAttribute("manufacturerList");
+				request.setAttribute("manufacturerList",manufacturerList);
 				page = "/WEB-INF/pages/manufacturer-list.jsp";
 				break;
 			case "product":
 				request.setAttribute("message", "Svi proizvodi");
+				@SuppressWarnings("unchecked") List<Product> productList = (List<Product>) request.getServletContext().getAttribute("productList");
+				request.setAttribute("productList",productList);
 				page = "/WEB-INF/pages/product-list.jsp";
 				break;
 			}

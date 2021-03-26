@@ -51,7 +51,8 @@ public class LoginServlet extends HttpServlet {
 		if(found) {
 			request.getRequestDispatcher("/WEB-INF/pages/home.jsp").forward(request, response);
 		}else {
-			request.setAttribute("message", "Email or password are not correct");
+			request.setAttribute("message", "Email ili sifra nisu ispravni, pokusajte ponovo");
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		}
 	}
 
