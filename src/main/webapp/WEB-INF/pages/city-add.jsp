@@ -17,14 +17,14 @@
 		<table>
 			<tr>
 				<td>Naziv grada:</td>
-				<td><input type="text" id="naziv" name="naziv" value=""></td>
+				<td><input type="text" id="naziv" name="naziv" value="${applicationScope.cityDto.naziv}"></td>
 			</tr>
 			<tr>
 				<td colspan="2"></td>
 			</tr>
 			<tr>
 				<td>Postansiki broj:</td>
-				<td><input type="text" id="postBroj"name="postBroj" value=""></td>
+				<td><input type="text" id="postBroj"name="postBroj" value="${applicationScope.cityDto.postBroj}"></td>
 			</tr>
 			<tr>
 				<td colspan="2">${error}</td>

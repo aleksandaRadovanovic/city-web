@@ -42,8 +42,8 @@ public class ProductServlet extends HttpServlet {
 			list.remove(index);
 			request.getRequestDispatcher("/navigation?link=list&entity=product").forward(request, response);
 		}else if(request.getParameter("opr").equals("details")) {
-			@SuppressWarnings("unchecked")
-			List<Product> list = (List<Product>) request.getServletContext().getAttribute("productList");
+//			@SuppressWarnings("unchecked")
+//			List<Product> list = (List<Product>) request.getServletContext().getAttribute("productList");
 			request.getRequestDispatcher("/navigation?link=add&entity=product").forward(request, response);
 		}
 	}

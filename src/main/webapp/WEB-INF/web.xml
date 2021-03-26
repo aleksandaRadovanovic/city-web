@@ -55,6 +55,12 @@
   	<description></description>
   	<servlet-class>it.engineering.web.servlet.LogoutServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>CityUpdateServlet</servlet-name>
+  	<display-name>CityUpdateServlet</display-name>
+  	<description></description>
+  	<servlet-class>it.engineering.web.servlet.CityUpdateServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>NavigationServlet2</servlet-name>
   	<url-pattern>/NavigationServlet2</url-pattern>
@@ -82,5 +88,9 @@
   <servlet-mapping>
   	<servlet-name>LogoutServlet</servlet-name>
   	<url-pattern>/LogoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CityUpdateServlet</servlet-name>
+  	<url-pattern>/CityUpdateServlet</url-pattern>
   </servlet-mapping>
 </web-app>

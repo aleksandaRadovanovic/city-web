@@ -42,8 +42,8 @@ public class ManufacturerServlet extends HttpServlet {
 			list.remove(index);
 			request.getRequestDispatcher("/navigation?link=list&entity=manufacturer").forward(request, response);
 		}else if(request.getParameter("opr").equals("details")) {
-			@SuppressWarnings("unchecked")
-			List<Manufacturer> list = (List<Manufacturer>) request.getServletContext().getAttribute("manufacturerList");
+//			@SuppressWarnings("unchecked")
+//			List<Manufacturer> list = (List<Manufacturer>) request.getServletContext().getAttribute("manufacturerList");
 			request.getRequestDispatcher("/navigation?link=add&entity=manufacturer").forward(request, response);
 		}
 	}

@@ -42,8 +42,9 @@ public class CityServlet extends HttpServlet {
 //			request.getRequestDispatcher("/WEB-INF/pages/city-list.jsp").forward(request, response);
 			request.getRequestDispatcher("/navigation?link=list&entity=city").forward(request, response);
 		}else if(request.getParameter("opr").equals("details")) {
-			@SuppressWarnings("unchecked")
-			List<City> list = (List<City>) request.getServletContext().getAttribute("cities");
+//			@SuppressWarnings("unchecked")
+//			List<City> list = (List<City>) request.getServletContext().getAttribute("cities");
+//			list.get(index);
 			request.getRequestDispatcher("/navigation?link=add&entity=city").forward(request, response);
 		}
 	}
