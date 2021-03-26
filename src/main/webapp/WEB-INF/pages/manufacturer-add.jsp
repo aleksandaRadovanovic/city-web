@@ -42,7 +42,7 @@
 				<td><input type="text" id="grad"name="grad" value=""></td>
 			</tr>
 			<tr>
-				<td><input type="submit" name="operation" value="dodajProizvodjaca"></td>
+				<td><input type="submit" name="operation" value="dodaj proizvodjaca"></td>
 			</tr>
 		</table>
 	</form>

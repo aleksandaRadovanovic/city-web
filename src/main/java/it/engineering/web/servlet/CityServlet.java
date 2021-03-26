@@ -54,13 +54,16 @@ public class CityServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String naziv = request.getParameter("naziv");
-		String postBroj = request.getParameter("postBroj");
+		String postanskiBroj = request.getParameter("postBroj");
+		
+		int postBroj = 0;
 		
 		boolean validation = true;
 		City cityDto = new City();
 		
 		cityDto.setNaziv(naziv);	
 		try {
+			postBroj = Integer.parseInt(postanskiBroj);
 			cityDto.setPostBroj(postBroj);
 		}catch (NumberFormatException nfe) {
 			request.setAttribute("error", "Postanski broj " + postBroj + " mora biti broj");

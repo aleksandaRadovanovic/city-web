@@ -55,28 +55,28 @@ public class ManufacturerServlet extends HttpServlet {
 
 		String nazivProizvodjaca = request.getParameter("naziv");
 		String pibStr = request.getParameter("pib");
-		int pib = Integer.parseInt(pibStr);
 		String maticniBroj = request.getParameter("maticniBroj");
 		String adresa = request.getParameter("adresa");
 		String gradNaziv = request.getParameter("grad");
 		
+		int pib = 0;
 		boolean validation = true;
 		Manufacturer manDto = new Manufacturer();
 		
 		manDto.setNazivProizvodjaca(nazivProizvodjaca);
 		try {
+			pib = Integer.parseInt(pibStr);
 			manDto.setPib(pib);
 		}catch (NumberFormatException nfe) {
 			request.setAttribute("error", "PIB broj " + pib + " mora biti broj");
 			validation = false;
 		}
-		manDto.setPib(pib);
 		manDto.setMaticniBroj(maticniBroj);
 		manDto.setAdresa(adresa);
 		manDto.setGradNaziv(gradNaziv);
 		
 		if(validation) {
-			if(request.getParameter("operation").equals("dodajProizvodjaca")) {
+			if(request.getParameter("operation").equals("dodaj proizvodjaca")) {
 				request.setAttribute("message", "Proizvodjac je uspesno dodat");
 				saveManufacturer(manDto, request);
 			}else {
@@ -86,7 +86,7 @@ public class ManufacturerServlet extends HttpServlet {
 			request.setAttribute("message", "Greska pri dodavanju grada");
 		}
 		request.setAttribute("manDto", manDto);
-		request.getRequestDispatcher("/WEB-INF/pages/manufacturer-add.jsp");
+		request.getRequestDispatcher("/WEB-INF/pages/manufacturer-add.jsp").forward(request, response);
 	}
 	
 	@SuppressWarnings("unchecked")

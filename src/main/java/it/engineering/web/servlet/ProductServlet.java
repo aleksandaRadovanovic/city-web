@@ -54,44 +54,48 @@ public class ProductServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String sifraProd = request.getParameter("sifraProizvoda");
-		int sifraProizvoda = Integer.parseInt(sifraProd);
 		String nazivProizvoda = request.getParameter("nazivProizvoda");
 		String jedCena = request.getParameter("jedinicnaCena");
-		double jedinicnaCena = Double.parseDouble(jedCena);
 		String mernaJedinica = request.getParameter("mernaJedinica");
 		String valuta = request.getParameter("valuta");
 		String porStopa = request.getParameter("poreskaStopa");
-		double poreskaStopa = Double.parseDouble(porStopa);
 		String proizvodjac = request.getParameter("proizvodjac");
+		
+		int sifraProizvoda = 0;
+		double jedinicnaCena = 0;
+		double poreskaStopa = 0;
 		
 		boolean validation = true;
 		Product productDto = new Product();
 		
 		try {
+			sifraProizvoda = Integer.parseInt(sifraProd);
 			productDto.setSifraProizvoda(sifraProizvoda);
 		}catch (NumberFormatException nfe) {
-			request.setAttribute("errorA", "Sifra proizvoda " + sifraProizvoda + " mora biti broj");
+			request.setAttribute("errorA", "Sifra proizvoda mora biti broj");
 			validation = false;
 		}
 		productDto.setNazivProizvoda(nazivProizvoda);
 		try {
+			jedinicnaCena = Double.parseDouble(jedCena);
 			productDto.setJedinicnaCena(jedinicnaCena);
 		}catch (NumberFormatException nfe) {
-			request.setAttribute("errorB", "Jedinicna cena " + jedinicnaCena + " mora biti broj");
+			request.setAttribute("errorB", "Jedinicna cena mora biti broj");
 			validation = false;
 		}
 		productDto.setMernaJedinica(mernaJedinica);
 		productDto.setValuta(valuta);
 		try {
+			poreskaStopa = Double.parseDouble(porStopa);
 			productDto.setPoreskaStopa(poreskaStopa);
 		}catch (NumberFormatException nfe) {
-			request.setAttribute("errorC", "Poreska stopa " + poreskaStopa + " mora biti broj");
+			request.setAttribute("errorC", "Poreska stopa mora biti broj");
 			validation = false;
 		}
 		productDto.setProizvodjacNaziv(proizvodjac);
 		
 		if(validation) {
-			if(request.getParameter("operation").equals("dodajProizvod")) {
+			if(request.getParameter("operation").equals("dodaj proizvod")) {
 				request.setAttribute("message", "Proizvod je uspesno dadat");
 				saveProduct(productDto, request);
 			}else {

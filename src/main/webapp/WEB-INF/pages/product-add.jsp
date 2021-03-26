@@ -27,11 +27,14 @@
 				<td><input type="text" id="sifraProizvoda"name="sifraProizvoda" value=""></td>
 			</tr>
 			<tr>
-				<td colspan="2">${error}</td>
+				<td colspan="2">${errorA}</td>
 			</tr>
 			<tr>
 				<td>Jedinicna cena:</td>
 				<td><input type="text" id="jedinicnaCena"name="jedinicnaCena" value=""></td>
+			</tr>
+			<tr>
+				<td colspan="2">${errorB}</td>
 			</tr>
 			<tr>
 				<td>Merna jedinica:</td>
@@ -46,11 +49,14 @@
 				<td><input type="text" id="poreskaStopa"name="poreskaStopa" value=""></td>
 			</tr>
 			<tr>
+				<td colspan="2">${errorC}</td>
+			</tr>
+			<tr>
 				<td>Proizvodjac:</td>
 				<td><input type="text" id="proizvodjac"name="proizvodjac" value=""></td>
 			</tr>
 			<tr>
-				<td><input type="submit" name="operation" value="dodajProizvod"></td>
+				<td><input type="submit" name="operation" value="dodaj proizvod"></td>
 			</tr>
 		</table>
 	</form>

@@ -29,11 +29,11 @@ public class MyContextListener implements ServletContextListener {
     	
     	
     	List<City> operations = new ArrayList<City>();
-    	operations.add(new City("Valjevo", "14000"));
+    	operations.add(new City("Beograd", 14000));
     	sce.getServletContext().setAttribute("cities", operations);
     	
     	List<Manufacturer> operManufacturers = new ArrayList<Manufacturer>();
-    	operManufacturers.add(new Manufacturer(1, "123456", "Srbijanka", "Ulica", "Beograd"));
+    	operManufacturers.add(new Manufacturer(1, "123456", "Fabrika", "Ulica", "Beograd"));
     	sce.getServletContext().setAttribute("manufacturerList", operManufacturers);
     	
     	List<Product> operProducts = new ArrayList<Product>();

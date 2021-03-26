@@ -3,13 +3,13 @@ package it.engineering.web.model;
 public class City {
 	
 	private String naziv;
-	private String postBroj;
+	private int postBroj;
 	
 	public City() {
 		super();
 	}
 
-	public City(String naziv, String postBroj) {
+	public City(String naziv, int postBroj) {
 		super();
 		this.naziv = naziv;
 		this.postBroj = postBroj;
@@ -23,11 +23,11 @@ public class City {
 		this.naziv = naziv;
 	}
 
-	public String getPostBroj() {
+	public int getPostBroj() {
 		return postBroj;
 	}
 
-	public void setPostBroj(String postBroj) {
+	public void setPostBroj(int postBroj) {
 		this.postBroj = postBroj;
 	}
 
